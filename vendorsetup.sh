@@ -1,0 +1,3 @@
+add_lunch_combo cm_afyonltetmo-eng
+add_lunch_combo cm_afyonltetmo-userdebug
+add_lunch_combo full_afyonltetmo-userdebug

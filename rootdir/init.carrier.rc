@@ -1,0 +1,244 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+on init
+
+on boot
+
+
+# permissions for bluetooth.
+    setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
+    chown bluetooth net_bt_stack ro.bt.bdaddr_path
+    chown bluetooth net_bt_stack /dev/ttyHS0
+    chmod 0660 /dev/ttyHS0
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+
+# SSWAP
+    write /proc/sys/vm/swappiness 130
+
+# permissions for TSP
+    chown system system /sys/class/sec/tsp/cmd
+    chown system system /sys/class/input/input1/enabled
+	chown system system /sys/class/input/input2/enabled
+    chown system system /sys/class/sec/sec_touchkey/brightness
+	chmod 0664 /sys/class/sec/tsp/cmd
+    chmod 0664 /sys/class/input/input1/enabled
+	chmod 0664 /sys/class/input/input2/enabled
+    chmod 0664 /sys/class/sec/sec_touchkey/brightness
+	
+#permission for touchkey	
+    chown system system /sys/class/sec/sec_touchkey/touchkey_brightness
+    chown system system /sys/class/sec/sec_touchkey/touchkey_menu
+    chown system system /sys/class/sec/sec_touchkey/touchkey_back
+    chown system system /sys/class/sec/sec_touchkey/touch_version
+    chown system system /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
+    chown system system /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
+    chown system system /sys/class/sec/sec_touchkey/touchkey_firm_update_status
+    chown system system /sys/class/sec/sec_touchkey/touchkey_firm_update
+    chown system system /sys/class/sec/sec_touchkey/touch_sensitivity
+    chown system system /sys/class/sec/sec_touchkey/touchkey_threshold
+    chown system system /sys/devices/virtual/sec/sec_touchkey/brightness
+    
+	chmod 0664 /sys/class/sec/sec_touchkey/touchkey_brightness
+   	chmod 0664 /sys/class/sec/sec_touchkey/touchkey_menu
+    chmod 0664 /sys/class/sec/sec_touchkey/touchkey_back
+   	chmod 0664 /sys/class/sec/sec_touchkey/touch_version
+    chmod 0664 /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
+  	chmod 0664 /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
+    chmod 0664 /sys/class/sec/sec_touchkey/touchkey_firm_update_status
+    chmod 0664 /sys/class/sec/sec_touchkey/touchkey_firm_update
+    chmod 0664 /sys/class/sec/sec_touchkey/touch_sensitivity
+	chmod 0664 /sys/class/sec/sec_touchkey/touchkey_threshold
+    chmod 0664 /sys/devices/virtual/sec/sec_touchkey/brightness
+
+	# mpu6500_input
+    chown system input /sys/class/input/input3/acc_enable
+    chown system input /sys/class/input/input3/acc_delay
+    chown system input /sys/class/input/input3/gyro_enable
+    chown system input /sys/class/input/input3/gyro_delay
+    chown system input /sys/class/input/input3/self_test
+
+
+#Accelerometer-BMA254
+    chown system input /sys/class/input/input3/data
+    chown system input /sys/class/input/input3/delay
+    chown system input /sys/class/input/input3/enable
+    chown system input /sys/class/input/input3/filter_enable
+    chown system input /sys/class/input/input3/modalias
+    chown system input /sys/class/input/input3/name
+    chown system input /sys/class/input/input3/offset
+    chown system input /sys/class/input/input3/phys
+    chown system input /sys/class/input/input3/position
+    chown system input /sys/class/input/input3/properties
+    chown system input /sys/class/input/input3/threshold
+    chown system input /sys/class/input/input5/data
+    chown system input /sys/class/input/input5/delay
+    chown system input /sys/class/input/input5/enable
+    chown system input /sys/class/input/input5/filter_enable
+    chown system input /sys/class/input/input5/modalias
+    chown system input /sys/class/input/input5/name
+    chown system input /sys/class/input/input5/offset
+    chown system input /sys/class/input/input5/phys
+    chown system input /sys/class/input/input5/position
+    chown system input /sys/class/input/input5/properties
+    chown system input /sys/class/input/input5/threshold
+#cm36651 proximity sensor
+    chown system input /sys/class/input/input4/enable
+    chown system input /sys/class/input/input4/id
+
+#cm36651 light sensor
+    chown system input /sys/class/input/input5/id
+    chown system input /sys/class/input/input5/poll_delay
+# alps/hscd magnetic sensor
+    chown system input /sys/class/input/input2/name
+    chown system input /sys/class/input/input2/poll
+    chown system input /sys/class/input/input2/id
+    chown system input /sys/class/input/input5/name
+    chown system input /sys/class/input/input5/poll
+    chown system input /sys/class/input/input5/id
+    chown system input /dev/alps_io
+    chown system input /system/etc/param.dat
+    chown system input /system/etc/alp_cal.dat
+
+#yas geomagnetic sensor
+    chown system input /sys/class/input/input4/name
+    chown system input /sys/class/input/input4/poll
+    chown system input /sys/class/input/input4/id
+    chown system input /sys/class/input/input4/data
+    chown system input /sys/class/input/input4/delay
+    chown system input /sys/class/input/input4/enable
+    chown system input /sys/class/input/input4/filter_enable
+    chown system input /sys/class/input/input4/filter_len
+    chown system input /sys/class/input/input4/filter_noise
+    chown system input /sys/class/input/input4/filter_threshold
+    chown system input /sys/class/input/input4/position
+    chown system input /sys/class/input/input6/name
+    chown system input /sys/class/input/input6/poll
+    chown system input /sys/class/input/input6/id
+    chown system input /sys/class/input/input6/data
+    chown system input /sys/class/input/input6/delay
+    chown system input /sys/class/input/input6/enable
+    chown system input /sys/class/input/input6/filter_enable
+    chown system input /sys/class/input/input6/filter_len
+    chown system input /sys/class/input/input6/filter_noise
+    chown system input /sys/class/input/input6/filter_threshold
+    chown system input /sys/class/input/input6/position
+
+#yas geomagnetic_raw sensor
+    chown system input /sys/class/input/input5/distortion
+    chown compass input /sys/class/input/input5/dynamic_matrix
+    chown compass input /sys/class/input/input5/offsets
+    chown system input /sys/class/input/input5/self_test
+    chown system input /sys/class/input/input5/threshold
+    chown system input /sys/class/input/input7/distortion
+    chown compass input /sys/class/input/input7/dynamic_matrix
+    chown compass input /sys/class/input/input7/offsets
+    chown system input /sys/class/input/input7/self_test
+    chown system input /sys/class/input/input7/threshold
+#sensors
+    chown system radio /sys/class/sensors/magnetic_sensor/selftest
+    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
+    chown system radio /sys/class/sensors/magnetic_sensor/adc
+    chown system radio /sys/class/sensors/magnetic_sensor/name
+    chown system radio /sys/class/sensors/magnetic_sensor/vendor
+    chown system radio /sys/class/sensors/magnetic_sensor/status
+
+    chown system radio /sys/class/sensors/accelerometer_sensor/name
+    chown system radio /sys/class/sensors/accelerometer_sensor/calibration
+    chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
+    chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
+    chown system radio /sys/class/sensors/accelerometer_sensor/vendor
+
+    chown system radio /sys/class/sensors/gyro_sensor/name
+    chown system radio /sys/class/sensors/gyro_sensor/power_on
+    chown system radio /sys/class/sensors/gyro_sensor/selftest
+    chown system radio /sys/class/sensors/gyro_sensor/temperature
+    chown system radio /sys/class/sensors/gyro_sensor/vendor
+
+    chown system radio /sys/class/sensors/light_sensor/name
+    chown system radio /sys/class/sensors/light_sensor/lux
+    chown system radio /sys/class/sensors/light_sensor/raw_data
+    chown system radio /sys/class/sensors/light_sensor/vendor
+
+    chown system radio /sys/class/sensors/proximity_sensor/name
+    chown system radio /sys/class/sensors/proximity_sensor/prox_avg
+    chown system radio /sys/class/sensors/proximity_sensor/prox_cal
+    chown system radio /sys/class/sensors/proximity_sensor/prox_cal2
+    chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
+    chown system radio /sys/class/sensors/proximity_sensor/prox_thresh
+    chown system radio /sys/class/sensors/proximity_sensor/raw_data
+    chown system radio /sys/class/sensors/proximity_sensor/state
+    chown system radio /sys/class/sensors/proximity_sensor/vendor
+	
+
+# bluetooth LPM
+
+# bluetooth dhcp config
+
+# efs  
+    mkdir /efs/drm 0700 system system
+    mkdir /efs/imei 0775 radio radio
+    restorecon -R /efs
+
+# TODO: replace it with device's DEXPREOPT_BOOT_JARS
+
+# RIL
+service at_distributor /system/bin/at_distributor
+    class late_start
+    user root
+    group radio log
+	
+on fs
+
+
+
+service diag_uart_log /system/bin/diag_uart_log
+    class main
+    user root
+    group radio
+
+# for ethernet
+#service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+#    class main
+#    disabled
+#    oneshot
+
+# Kickstart the Wireless subsystem
+write /dev/wcnss_wlan 1
+write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
+
+service ftm_ptt /system/bin/ftm_ptt -d
+    user root
+    group radio system
+    disabled
+
+# end of wifi
+# service for TZPR provisioning version check app
+service scranton_RD /system/bin/scranton_RD
+    class main
+    user root
+    disabled
+    oneshot
+
+# start for TZPR provisioning version check app
+on property:sys.qseecomd.enable=true
+    start scranton_RD
+
+    mkdir /efs/drm/playready 0775
+    chown drm system /efs/drm/playready
+    chmod 0775 /efs/drm/playready
+
+# SSWAP
+service swapon /sbin/sswap -s
+    class core
+    user root
+    group root
+    seclabel u:r:sswap:s0
+    oneshot
+
+
