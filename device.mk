@@ -24,7 +24,7 @@ $(call inherit-product, vendor/samsung/afyonltetmo/afyonltetmo-vendor.mk)
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 960
