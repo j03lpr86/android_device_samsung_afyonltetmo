@@ -17,7 +17,7 @@
 
 LOCAL_PATH := device/samsung/afyonltetmo
 
-TARGET_OTA_ASSERT_DEVICE := afyonltetmo
+TARGET_OTA_ASSERT_DEVICE := afyonltetmo,afyonltecan,afyonltemtr,SM-G386T,SM-G386T1,SM-G386W,G386T,G386T1,G386W
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
