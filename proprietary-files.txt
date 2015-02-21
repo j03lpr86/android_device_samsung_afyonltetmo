@@ -320,3 +320,4 @@ lib/libqsap_sdk.so
 
 # Misc
 bin/port-bridge
+lib/libqdutils.so
