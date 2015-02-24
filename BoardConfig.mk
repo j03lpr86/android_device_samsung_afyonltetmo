@@ -65,7 +65,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/afyonltetmo/ril/
 # Display
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_QCOM_DISPLAY_VARIANT := caf-new
+TARGET_QCOM_DISPLAY_VARIANT := caf
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_NO_INITLOGO := true
 
@@ -94,7 +94,7 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_MEDIA_VARIANT := caf-new
+TARGET_QCOM_MEDIA_VARIANT := caf
 
 
 # Partitions
