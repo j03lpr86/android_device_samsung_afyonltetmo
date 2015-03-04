@@ -14,7 +14,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),ms013g)
+ifeq ($(TARGET_DEVICE),afyonltetmo)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 ADSP_IMAGES := \

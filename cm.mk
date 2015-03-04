@@ -20,8 +20,4 @@ $(call inherit-product, device/samsung/afyonltetmo/full_afyonltetmo.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := SM-G386T
-PRODUCT_DEVICE := afyonltetmo
 PRODUCT_NAME := cm_afyonltetmo
-
-# Product property
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=afyonltetmo TARGET_DEVICE=afyonltetmo BUILD_FINGERPRINT="samsung/afyonltetmo/afyonltetmo:4.4.2/KOT49H/G386TXX1ANK3:user/release-keys" PRIVATE_BUILD_DESC="afyonltetmo-user 4.4.2 KOT49H G386TXX1ANK3 release-keys"

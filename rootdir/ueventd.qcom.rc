@@ -100,7 +100,6 @@
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
 /dev/jpeg2                0660   system     camera
-/dev/adsprpc-smd          0664   media		camera
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
@@ -108,9 +107,10 @@
 /dev/msm_vidc_dec         0660   system     audio
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
+/dev/msm_vidc_enc_sec     0660   system     audio
 /dev/msm_rotator          0660   system     system
 /dev/hw_random            0660   system     system
-/dev/adsprpc-smd          0664   media      camera
+/dev/adsprpc-smd          0660   media      camera
 /dev/graphics/*           0660   system     graphics
 /dev/tun                  0660   system     vpn
 
@@ -162,9 +162,9 @@
 /dev/tsc_ci0              0660   media       media
 
 # sensors
-/sys/devices/i2c-12/12-*            pollrate_ms     0664     system    system
-/sys/devices/f9925000.i2c/i2c-0/0-* enable          0660     input     system
-/sys/devices/f9925000.i2c/i2c-0/0-* poll_delay      0660     input     system
+/sys/devices/i2c-12/12-*                            pollrate_ms    0664    system   system
+/sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
+/sys/devices/f9925000.i2c/i2c-0/0-*                 poll_delay     0660    input    system
 /sys/devices/virtual/optical_sensors/proximity      ps_adc         0660    input    system
 /sys/devices/virtual/optical_sensors/proximity      ps_poll_delay  0660    input    system
 /sys/devices/virtual/optical_sensors/lightsensor    ls_auto        0660    input    system
@@ -177,7 +177,12 @@
 /dev/wcnss_ctrl           0660   system     system
 
 #nfc permissions
-/dev/nfc-nci              0660    nfc         nfc
+/dev/pn547                                          0660    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  init_deinit 0200    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  set_pwr     0200    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  res_ready   0400    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  recv_rsp    0600    nfc     nfc
+/sys/devices/f9925000.i2c/i2c-2/2-0028  send_cmd    0200    nfc     nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
