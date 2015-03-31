@@ -11,16 +11,25 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+ 
+#
+# This file is the build configuration for a full Android
+# build for maguro hardware. This cleanly combines a set of
+# device-specific aspects (drivers) with a device-agnostic
+# product configuration (apps). Except for a few implementation
+# details, it only fundamentally contains two inherit-product
+# lines, full and maguro, hence its name.
+#
+ 
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 # Inherit from afyonltetmo device
 $(call inherit-product, device/samsung/afyonltetmo/device.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := afyonltetmo
+# Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_afyonltetmo
+PRODUCT_DEVICE := afyonltetmo
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-G386T
 PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := SM-G386T
